@@ -1,0 +1,58 @@
+<div class="modal-backdrop-custom" (click)="close.emit()"></div>
+
+<div class="modal modal-animate d-block">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content modern-modal">
+
+      <div class="modal-header modern-modal-header">
+        <h5 class="modal-title fw-bold">
+          {{ item ? 'Edit Item' : 'Add Item' }}
+        </h5>
+        <button class="btn-close" (click)="close.emit()"></button>
+      </div>
+
+      <div class="modal-body modern-modal-body">
+        <div class="row g-3">
+
+          <div class="col-12 text-center">
+            <img
+              [src]="form.image || 'https://via.placeholder.com/120'"
+              class="item-preview mb-2"
+            />
+            <input
+              type="file"
+              class="form-control form-control-sm"
+              (change)="onImageUpload($event)"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Item Name</label>
+            <input class="form-control modern-input" [(ngModel)]="form.name">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Item Code</label>
+            <input class="form-control modern-input" [(ngModel)]="form.code">
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Description</label>
+            <textarea
+              rows="3"
+              class="form-control modern-input"
+              [(ngModel)]="form.description">
+            </textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer modern-modal-footer">
+        <button class="btn btn-light px-4" (click)="close.emit()">Cancel</button>
+        <button class="btn btn-primary px-4" (click)="submit()">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>

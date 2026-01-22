@@ -1,0 +1,74 @@
+<div class="sidebar" [class.collapsed]="collapsed">
+
+  <!-- Brand -->
+  <div class="sidebar-brand">
+    <i class="bi bi-grid-fill brand-icon"></i>
+    <span class="brand-text" *ngIf="!collapsed">My Dashboard</span>
+  </div>
+
+  <!-- Menu -->
+  <ul class="sidebar-menu">
+
+    <!-- Dashboard -->
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <i class="bi bi-speedometer2"></i>
+        <span class="label" *ngIf="!collapsed">Dashboard</span>
+      </a>
+    </li>
+
+    <!-- Parent menu -->
+    <li>
+      <a
+        href="javascript:void(0)"
+        (click)="toggleMenu()"
+        class="menu-parent"
+      >
+        <i class="bi bi-folder"></i>
+        <span class="label" *ngIf="!collapsed">Management</span>
+
+        <!-- Chevron -->
+        <i
+          class="bi bi-chevron-down chevron"
+          *ngIf="!collapsed"
+          [class.rotate]="isMenuOpen"
+        ></i>
+      </a>
+
+      <!-- Children -->
+      <ul class="submenu" *ngIf="isMenuOpen && !collapsed">
+        <li>
+          <a routerLink="/dashboard/users">
+            <i class="bi bi-people"></i>
+            <span>Users</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard/items" routerLinkActive="active">
+            <i class="bi bi-box-seam"></i>
+            <span>Items</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard/inventory" routerLinkActive="active">
+            <i class="bi bi-clipboard-data"></i>
+            <span>Inventory</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard/settings">
+            <i class="bi bi-gear"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+  <div class="sidebar-footer">
+    <button class="logout-btn" (click)="logout()">
+      <i class="bi bi-box-arrow-right"></i>
+      <span *ngIf="!collapsed">Logout</span>
+    </button>
+  </div>
+</div>

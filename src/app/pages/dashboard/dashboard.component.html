@@ -1,0 +1,14 @@
+<div class="d-flex dashboard-wrapper">
+  <!-- Sidebar -->
+  <app-sidebar [collapsed]="sidebarCollapsed"></app-sidebar>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1">
+    <app-navbar (toggleSidebar)="toggleSidebar()"></app-navbar>
+
+    <main class="p-4">
+      <h2>Welcome 👋</h2>
+      <p>This is your dashboard content.</p>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="d-flex dashboard-wrapper">
+
+  <!-- Mobile overlay -->
+  <div
+    class="sidebar-overlay"
+    *ngIf="sidebarCollapsed"
+    (click)="toggleSidebar()">
+  </div>
+
+  <!-- Sidebar -->
+  <app-sidebar [collapsed]="sidebarCollapsed"></app-sidebar>
+
+  <!-- Main -->
+  <div class="flex-grow-1">
+    <app-navbar (toggleSidebar)="toggleSidebar()"></app-navbar>
+
+    <main class="p-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

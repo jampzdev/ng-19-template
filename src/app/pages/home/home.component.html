@@ -1,0 +1,58 @@
+<!-- Page Header -->
+<div class="mb-4">
+  <h2 class="fw-bold">Dashboard Overview</h2>
+  <p class="text-muted mb-0">
+    Quick snapshot of inventory and activity
+  </p>
+</div>
+
+<!-- Stat Cards -->
+<div class="row g-4 mb-4">
+  <div class="col-md-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <h6 class="text-muted">Total Items</h6>
+        <h3 class="fw-bold mb-0">470</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <h6 class="text-muted">Low Stock</h6>
+        <h3 class="fw-bold mb-0 text-warning">23</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <h6 class="text-muted">Out of Stock</h6>
+        <h3 class="fw-bold mb-0 text-danger">5</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Charts -->
+<div class="row g-4">
+  <div class="col-lg-6">
+    <div class="card shadow-sm border-0 h-100">
+      <div class="card-body">
+        <h6 class="fw-semibold mb-3">Inventory by Category</h6>
+        <canvas id="inventoryChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card shadow-sm border-0 h-100">
+      <div class="card-body">
+        <h6 class="fw-semibold mb-3">Monthly Activity</h6>
+        <canvas id="activityChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
